@@ -17,7 +17,7 @@ RUN curl -L -o tridentsdk.jar "$ARTIFACT_LINK"
 EXPOSE 25565
 
 ### Set entrypoint
-ADD ../entrypoint.sh /opt/tridentsdk/entrypoint.sh
+ADD entrypoint.sh /opt/tridentsdk/entrypoint.sh
 ENTRYPOINT ["/bin/sh", "entrypoint.sh"]
 
 ### Clear default command
