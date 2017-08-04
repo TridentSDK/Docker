@@ -17,9 +17,14 @@ RUN curl -L -o tridentsdk.jar "$ARTIFACT_LINK"
 ### Expose ports
 EXPOSE 25565
 
-### Set entrypoint
+### Add entrypoint
 ADD entrypoint.sh /opt/tridentsdk/entrypoint.sh
-ENTRYPOINT ["/bin/sh", "entrypoint.sh"]
+
+### Set official working directory
+WORKDIR /opt/tridentsdk/server
+
+### Set entrypoint
+ENTRYPOINT ["/bin/sh", "/opt/tridentsdk/entrypoint.sh"]
 
 ### Clear default command
 CMD [""]

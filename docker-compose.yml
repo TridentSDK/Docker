@@ -6,7 +6,7 @@ services:
         ports:
          - 25565:25565
         volumes:
-         - /opt/tridentsdk:./server
+         - ./server:/opt/tridentsdk/server
         environment:
          - MIN_MEMORY=1G
          - MAX_MEMORY=1G
